@@ -26,7 +26,7 @@ const PokemonListItem = ({ pokemon }: Props) => {
       layoutId={name}
       className="group relative z-10 h-[350px] w-[230px] transition-all duration-500 hover:-translate-y-5"
     >
-      <button
+      <motion.button
         onClick={() => navigate(`/${name}`, { state: data })}
         className={`pokemon-card ${pokemonTypes[0]} h-full w-full rounded-2xl border-[3px] border-transparent ${style.border} ${style.mainBackground} p-4 text-white shadow-xl shadow-[#00000035] transition-all duration-500 hover:shadow-none`}
       >
@@ -62,7 +62,7 @@ const PokemonListItem = ({ pokemon }: Props) => {
             </div>
           ))}
         </div>
-      </button>
+      </motion.button>
     </motion.div>
   );
 };

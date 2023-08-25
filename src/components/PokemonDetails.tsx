@@ -4,16 +4,19 @@ import { pokeColors, pokeball } from "../config/constants";
 import { formatId } from "../config/helpers";
 import { PokemonImage } from ".";
 import { CgPokemon, CgArrowLeft } from "react-icons/cg";
+import { useMemo } from "react";
 
 const PokemonDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { name, types, id } = location.state;
-  const pokemonTypes = types?.map(
-    (type: { type: { name: string } }) => type.type.name,
+  const pokemonTypes = useMemo(
+    () => types?.map((type: { type: { name: string } }) => type.type.name),
+    [types],
   );
 
   const style = pokeColors[pokemonTypes[0]];
+
   return (
     <AnimatePresence>
       <motion.div
@@ -48,7 +51,10 @@ const PokemonDetails = () => {
             </div>
             <div className="pokemon-details-types flex w-full items-center justify-start gap-4">
               {pokemonTypes.map((type: string) => (
-                <div className="rounded-full bg-[#ffffff50] p-2 pl-4 pr-4 text-sm font-bold capitalize shadow-xl">
+                <div
+                  key={type}
+                  className="rounded-full bg-[#ffffff50] p-2 pl-4 pr-4 text-sm font-bold capitalize shadow-xl"
+                >
                   {type}
                 </div>
               ))}
