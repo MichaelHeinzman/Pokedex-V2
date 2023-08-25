@@ -1,8 +1,7 @@
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import useSWR from "swr";
 import { TPokemon } from "./Pokemon";
 import { PokemonLoadingSkeleton, PokemonListItem } from ".";
-import PokemonDetails from "./PokemonDetails";
 import { Outlet } from "react-router-dom";
 
 const Pokedex = () => {

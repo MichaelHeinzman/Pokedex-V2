@@ -14,7 +14,7 @@ const PokemonListItem = ({ pokemon }: Props) => {
   const navigate = useNavigate();
 
   const { data } = useSWR(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`);
-  const { name, id, types, sprites } = data;
+  const { name, id, types } = data;
   const pokemonTypes: string[] = types?.map(
     (type: { type: { name: string } }) => type.type.name,
   );
