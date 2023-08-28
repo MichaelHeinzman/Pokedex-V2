@@ -10,7 +10,7 @@ const Pokedex = () => {
 
   const pokemon = useMemo(
     () =>
-      data.results.map((pokemon: TPokemon) => (
+      data?.results.map((pokemon: TPokemon) => (
         <Suspense
           key={pokemon.name + "suspense"}
           fallback={<PokemonLoadingSkeleton {...pokemon} />}
@@ -19,11 +19,11 @@ const Pokedex = () => {
           <PokemonListItem key={pokemon.name} pokemon={pokemon} />
         </Suspense>
       )),
-    [data.results],
+    [data?.results],
   );
 
   return (
-    <div className="grid h-full w-fit grid-cols-1 gap-y-20 p-4 sm:grid-cols-2 sm:gap-4  md:grid-cols-2 md:gap-16 md:p-0 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="grid h-fit w-fit grid-cols-1 gap-y-20 overflow-auto p-16 sm:grid-cols-2  sm:gap-4 md:grid-cols-2 md:gap-16 md:p-16 lg:grid-cols-3 xl:grid-cols-4">
       <Outlet />
       {pokemon}
     </div>

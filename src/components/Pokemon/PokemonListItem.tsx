@@ -27,7 +27,7 @@ const PokemonListItem = ({ pokemon }: Props) => {
       className="group relative z-10 h-[350px] w-[230px] transition-all duration-500 hover:-translate-y-5"
     >
       <motion.button
-        onClick={() => navigate(`/${name}`, { state: data })}
+        onClick={() => navigate(`/pokedex/${name}`, { state: data })}
         className={`pokemon-card ${pokemonTypes[0]} h-full w-full rounded-2xl border-[3px] border-transparent ${style.border} ${style.mainBackground} p-4 text-white shadow-xl shadow-[#00000035] transition-all duration-500 hover:shadow-none`}
       >
         <div className="pokemon-card-header flex h-1/5 w-full justify-between p-2 font-extrabold">
