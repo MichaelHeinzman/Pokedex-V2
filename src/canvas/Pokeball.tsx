@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
@@ -18,9 +18,7 @@ const PokeballScene = () => {
 };
 
 const CameraControls = () => {
-  const controlsRef = useRef();
-
-  return <OrbitControls ref={controlsRef} target={[0, 0, 0]} />;
+  return <OrbitControls target={[0, 0, 0]} />;
 };
 
 const Pokeball = () => {
