@@ -20,10 +20,11 @@ const PokemonDetails = () => {
   return (
     <AnimatePresence>
       <motion.div
+        key={name + id}
         initial={{ zIndex: 20 }}
         animate={{ zIndex: 20 }}
         exit={{ zIndex: 20 }}
-        className={`${style.gradient} fixed left-0 top-0 flex h-screen w-screen items-center justify-center bg-gradient-to-r`}
+        className={`${style.gradient} fixed left-0 top-0 !z-20 flex h-screen w-screen items-center justify-center bg-gradient-to-r`}
       >
         <motion.img
           initial={{ opacity: 0 }}

@@ -27,6 +27,17 @@ body {
   color: white;
 }
 
+.landing-page-gradient {
+  background: linear-gradient(
+    250deg,
+    #f06e17 20%,
+    #f49b3d 37.5%,
+    #f4a041 44.52%,
+    #ee912f 51.88%,
+    #ef6f18 100%
+  );
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

@@ -23,8 +23,9 @@ const PokemonListItem = ({ pokemon }: Props) => {
 
   return (
     <motion.div
+      key={name + id + "list"}
       layoutId={name}
-      className="group relative z-10 h-[350px] w-[230px] transition-all duration-500 hover:-translate-y-5"
+      className="group relative !z-10 h-[350px] w-[230px] !transition-all !duration-500 hover:!-translate-y-5"
     >
       <motion.button
         onClick={() => navigate(`/pokedex/${name}`, { state: data })}
