@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { PokemonImage } from "../components";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -16,7 +17,7 @@ const Landing = () => {
             type: "spring",
             damping: 20,
           }}
-          className="flex h-fit w-full flex-col items-center"
+          className="flex h-fit w-full flex-col items-center gap-8"
         >
           <h1>Charmander</h1>
           <p className="w-full">
@@ -25,6 +26,12 @@ const Landing = () => {
             color. Charmander, along with all of its evolved forms, has a flame
             that is constantly burning on the end of its tail.
           </p>
+          <Link
+            to="/pokedex"
+            className="self-start rounded-md bg-orange-300 p-2 px-4"
+          >
+            Continue
+          </Link>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 1500 }}

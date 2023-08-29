@@ -1,5 +1,5 @@
 import PokedexContainer from "./PokedexContainer";
-import Details from "./PokemonDetails";
+import Details from "./Pokemon/PokemonDetails";
 import PokemonListItem from "./Pokemon/PokemonListItem";
 import PokemonLoadingSkeleton from "./Pokemon/PokemonLoadingSkeleton";
 import Pokedex from "./Pokedex";

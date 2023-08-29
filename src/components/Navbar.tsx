@@ -8,16 +8,20 @@ const Navbar = () => {
         location.pathname !== "/" && "landing-page-gradient shadow-md"
       } fixed top-0 z-50 flex w-full justify-between p-4 text-xl font-bold`}
     >
-      <button className="group flex w-1/3 items-center justify-start gap-2">
+      <Link
+        to="/"
+        className="group flex w-1/3 items-center justify-start gap-2"
+      >
         <CgPokemon
           size="2rem"
           color="white"
           className="group-hover:animate-spin"
         />
         Pokedex
-      </button>
+      </Link>
+
       <div className="flex w-1/3 items-center justify-center rounded-md bg-white shadow-inner drop-shadow-sm"></div>
-      <div className="flex w-1/3 items-end justify-around pl-10 text-base font-semibold">
+      <div className="hidden w-1/3 items-end justify-around pl-10 text-base font-semibold lg:flex">
         <motion.button
           className={`flex h-full items-end ${
             location.pathname === "/" && "text-lg font-extrabold"

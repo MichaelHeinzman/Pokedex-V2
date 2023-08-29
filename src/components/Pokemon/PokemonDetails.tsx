@@ -1,15 +1,19 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
-import { pokeColors, pokeball } from "../config/constants";
-import { formatId } from "../config/helpers";
-import { PokemonImage } from ".";
+import { pokeColors, pokeball } from "../../config/constants";
+import { formatId } from "../../config/helpers";
+import { PokemonImage } from "..";
 import { CgPokemon, CgArrowLeft } from "react-icons/cg";
 import { useMemo } from "react";
+import PokemonDetailsTabs from "./PokemonDetailsTabs";
+import useSWR from "swr";
 
 const PokemonDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { name, types, id } = location.state;
+  const { data } = useSWR(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+
   const pokemonTypes = useMemo(
     () => types?.map((type: { type: { name: string } }) => type.type.name),
     [types],
@@ -66,8 +70,10 @@ const PokemonDetails = () => {
               customStyle="absolute inset-0 bottom-[10%] z-10 m-auto h-[45%]  rounded-full object-contain"
             />
           </div>
-
-          <div className="absolute bottom-0 h-[41%] w-full rounded-3xl bg-white"></div>
+          <PokemonDetailsTabs
+            colors={style}
+            data={{ ...data, ...location.state }}
+          />
         </motion.div>
 
         <div

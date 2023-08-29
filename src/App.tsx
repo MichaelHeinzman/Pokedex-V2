@@ -5,7 +5,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import PokemonDetails from "./components/PokemonDetails";
+import PokemonDetails from "./components/Pokemon/PokemonDetails";
 import PokedexPage from "./pages/PokedexPage";
 
 function App() {
